@@ -11,10 +11,10 @@ I acknowledge that if I am found in violation of this policy this may result
 in a zero grade, a permanent record on file and possibly immediate failure of the class.
 
 Reflection:
-In this file I handled the interaction of the page, including showing and hiding sections 
-like the visitor form and the success message. I also kept the functionality 
-from previous projects like the theme toggle and image modal. One challenge was 
-making sure everything worked together without conflicts. This helped me understand 
+In this file I handled the interaction of the page, including showing and hiding sections
+like the visitor form and the success message. I also kept the functionality
+from previous projects like the theme toggle and image modal. One challenge was
+making sure everything worked together without conflicts. This helped me understand
 how to separate responsibilities between different JavaScript files.
 */
 
@@ -60,7 +60,6 @@ function setupThemeToggle() {
       themeLink = document.createElement("link");
       themeLink.rel = "stylesheet";
       themeLink.href = "css/theme.css";
-      themeLink.id = "themeStylesheet";
       document.head.appendChild(themeLink);
 
       themeActive = true;

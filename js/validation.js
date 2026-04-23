@@ -12,11 +12,11 @@ in a zero grade, a permanent record on file and possibly immediate failure of th
 
 Reflection:
 This was the most challenging part of the project. I implemented validation
-for required fields, formats like email and phone, and custom logic like 
-checking valid state abbreviations. I also worked on displaying error messages 
-and changing input styles based on validity. One difficulty I had was making 
-sure validation worked both on change and on submit. I also had to debug issues 
-where some fields were not updating correctly. This file helped me better understand 
+for required fields, formats like email and phone, and custom logic like
+checking valid state abbreviations. I also worked on displaying error messages
+and changing input styles based on validity. One difficulty I had was making
+sure validation worked both on change and on submit. I also had to debug issues
+where some fields were not updating correctly. This file helped me better understand
 how form validation works in real applications.
 */
 

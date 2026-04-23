@@ -13,14 +13,12 @@ in a zero grade, a permanent record on file and possibly immediate failure of th
 Reflection:
 In this file I organized the main startup logic for the website. I learned
 that separating page behavior from validation makes the project easier to
-read and maintain. One thing that was challenging was deciding what code 
-belonged in each file. After working on this project, I understand better 
+read and maintain. One thing that was challenging was deciding what code
+belonged in each file. After working on this project, I understand better
 how a main file can act as the entry point for the entire site.
 */
 
-
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("Responsive hiking site loaded.");
   initPage();
   initValidation("myform", "success");
 });

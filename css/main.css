@@ -507,14 +507,6 @@ body {
   background: #fff;
 }
 
-.form-row.triple .form-group.state-group {
-  flex: 0 0 90px;
-}
-
-.form-row.triple .form-group.zip-group {
-  flex: 0 0 130px;
-}
-
 /* ===== CHECKBOX GROUP ===== */
 .checkbox-group {
   display: flex;
@@ -597,11 +589,6 @@ textarea.was-validated:valid {
 
   .field-wrap {
     max-width: 100%;
-  }
-
-  .form-row.triple .form-group.state-group,
-  .form-row.triple .form-group.zip-group {
-    flex: 1 1 auto;
   }
 
   .visitor-form {
