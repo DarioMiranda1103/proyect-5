@@ -1,0 +1,218 @@
+/*
+Project: Project 5 Personal Web Site Visitor Form
+Name: Dario Miranda
+Submitted: April 22, 2026
+
+I declare that the following source code was written by me, or provided
+by the instructor for this project. I understand that copying source
+code from any other source, providing source code to another student,
+or leaving my code on a public web site constitutes cheating.
+I acknowledge that if I am found in violation of this policy this may result
+in a zero grade, a permanent record on file and possibly immediate failure of the class.
+
+Reflection:
+This part took me a bit to figure out. The inputs looked fine at first, but once I switched to 
+the dark theme, some of them were almost unreadable. The text was way too dark. 
+I kept thinking it was something with the HTML layout, but it wasn’t. It ended up 
+being the theme styles. The newer inputs I added weren’t getting the same styling, 
+so they just kept the default colors. I had to go back and fix the selectors so everything was 
+included. After that it finally looked consistent.
+*/
+
+/* =========================
+   THEME LAYOUT AND BACKGROUND
+========================= */
+body {
+  color: #ecf3ee;
+  background:
+    linear-gradient(rgba(8, 12, 18, 0.82), rgba(8, 12, 18, 0.9)),
+    url("../img/bonneville-shoreline.jpg") center center / cover fixed no-repeat;
+}
+
+.site-layout {
+  grid-template-columns: 1fr 240px;
+  grid-template-areas:
+    "header header"
+    "main sidebar"
+    "footer footer";
+}
+
+/* =========================
+   HEADER AND NAVIGATION
+========================= */
+.site-header {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  border-bottom: 4px solid #88a9c3;
+}
+
+.site-sidebar {
+  background: rgba(12, 20, 28, 0.92);
+  border-right: none;
+  border-left: 2px solid rgba(136, 169, 195, 0.35);
+}
+
+.site-nav a {
+  background: linear-gradient(to right, #345b63, #4a7c59);
+  color: #f4fbf6;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+.site-nav a:hover {
+  background: linear-gradient(to right, #4a7c59, #5f8f65);
+  transform: translateX(-4px);
+}
+
+.theme-btn {
+  background: linear-gradient(to right, #345b63, #4a7c59);
+  color: #f4fbf6;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+.theme-btn:hover {
+  background: linear-gradient(to right, #4a7c59, #5f8f65);
+  transform: translateY(-2px);
+}
+
+.theme-btn.theme-on {
+  background: linear-gradient(to right, #345b63, #4a7c59);
+  color: #f4fbf6;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+.theme-btn.theme-on:hover {
+  background: linear-gradient(to right, #4a7c59, #5f8f65);
+}
+
+/* =========================
+   CONTENT AND CARDS
+========================= */
+.content-section {
+  background-color: rgba(17, 27, 37, 0.88);
+  border: 1px solid rgba(136, 169, 195, 0.2);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+.content-section h2,
+.extra-note summary,
+.header-text h1,
+.header-text p,
+.featured-figure figcaption {
+  color: #d8e7f2;
+}
+
+.intro-card,
+.techniques-box,
+.extra-note,
+.video-card,
+.contact-card,
+.featured-figure,
+.gallery-item,
+.info-card {
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tech-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 6px solid #88a9c3;
+}
+
+.gallery-item img,
+.featured-figure img {
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+.site-footer {
+  background: #0f2027;
+  border-top: 4px solid #88a9c3;
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.92);
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media (max-width: 900px) {
+  .site-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main"
+      "footer";
+  }
+
+  .site-sidebar {
+    border-left: none;
+    border-bottom: 2px solid rgba(136, 169, 195, 0.35);
+  }
+
+  .site-nav a:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* =========================
+   THEME VISITOR FORM
+========================= */
+.form-card {
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.form-intro,
+.checkbox-group label {
+  color: #ecf3ee;
+}
+
+.form-row label,
+.group-label,
+.form-group label {
+  color: #d8e7f2;
+}
+
+.field-wrap input,
+.field-wrap textarea,
+.form-group input,
+.form-group textarea {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ecf3ee;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.field-wrap input::placeholder,
+.field-wrap textarea::placeholder,
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(236, 243, 238, 0.7);
+}
+
+.success-message {
+  background: rgba(74, 124, 89, 0.2);
+  color: #e6f6ea;
+  border: 1px solid rgba(143, 201, 153, 0.4);
+}
+
+input,
+textarea {
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+input.was-validated:invalid,
+textarea.was-validated:invalid {
+  background-color: rgba(176, 0, 32, 0.12);
+  border: 1px solid #ff8a80;
+  color: #ffd6d6;
+}
+
+input.was-validated:valid,
+textarea.was-validated:valid {
+  background-color: rgba(46, 125, 50, 0.14);
+  border: 1px solid #81c784;
+  color: #ffffff;
+}

@@ -1,0 +1,606 @@
+/*
+Project: Project 5 Personal Web Site Visitor Form
+Name: Dario Miranda
+Submitted: April 22, 2026
+
+I declare that the following source code was written by me, or provided
+by the instructor for this project. I understand that copying source
+code from any other source, providing source code to another student,
+or leaving my code on a public web site constitutes cheating.
+I acknowledge that if I am found in violation of this policy this may result
+in a zero grade, a permanent record on file and possibly immediate failure of the class.
+
+Reflection:
+In this stylesheet I kept the layout from my previous hiking website and
+expanded it with a styled visitor form. I learned how to use Flexbox inside
+the form while still keeping my full page layout organized with Grid.
+
+One challenge was making the form match the rest of the site design while
+still showing validation feedback clearly. This helped me improve both the
+visual design and usability of my website.
+*/
+
+/* =========================
+   RESET AND GLOBAL STYLES
+========================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #243224;
+  background: linear-gradient(to bottom, #dce8d7, #f7f4ec);
+}
+
+/* =========================
+   MAIN PAGE LAYOUT
+========================= */
+.site-layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+}
+
+/* =========================
+   HEADER
+========================= */
+.site-header {
+  grid-area: header;
+  background: linear-gradient(to right, #355e3b, #6f8f72);
+  color: white;
+  padding: 1.5rem;
+  border-bottom: 4px solid #d2c29d;
+}
+
+.header-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.logo {
+  width: 85px;
+  height: 85px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid white;
+  background-color: white;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.theme-btn {
+  padding: 0.6rem 1rem;
+  background-color: #6b8e5e;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 999px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.theme-btn:hover {
+  background-color: #507047;
+  transform: translateY(-2px);
+}
+
+.header-text h1 {
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+}
+
+/* =========================
+   SIDEBAR / NAVIGATION
+========================= */
+.site-sidebar {
+  grid-area: sidebar;
+  background-color: #f2eee3;
+  border-right: 2px solid #c8bda4;
+  padding: 1.5rem 1rem;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 0.8rem 1rem;
+  background-color: #6b8e5e;
+  color: white;
+  font-weight: bold;
+  border-radius: 999px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.site-nav a:hover {
+  background-color: #507047;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+.site-main {
+  grid-area: main;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.content-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid #d4ccb9;
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+.content-section h2 {
+  color: #355e3b;
+}
+
+/* =========================
+   SHARED CARD STYLES
+========================= */
+.intro-card,
+.techniques-box,
+.extra-note,
+.video-card,
+.contact-card,
+.featured-figure,
+.gallery-item {
+  background-color: white;
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   HOME SECTION
+========================= */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.info-card {
+  background: linear-gradient(to bottom, #ffffff, #eef4ea);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+  height: 100%;
+}
+
+.tech-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.tech-card {
+  background: linear-gradient(to right, #f7f5ef, #edf4ea);
+  border-left: 6px solid #6f8f72;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.extra-note summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: #355e3b;
+  margin-bottom: 0.75rem;
+}
+
+/* =========================
+   GALLERY
+========================= */
+.featured-figure {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.featured-figure img {
+  width: 100%;
+  max-width: 700px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.featured-figure figcaption {
+  text-align: center;
+  color: #555;
+  font-style: italic;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.gallery-item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.gallery-item p {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* =========================
+   MEDIA
+========================= */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.site-footer {
+  grid-area: footer;
+  text-align: center;
+  padding: 1rem;
+  background-color: #355e3b;
+  color: white;
+  border-top: 4px solid #d2c29d;
+}
+
+/* =========================
+   MODAL
+========================= */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.modal-content {
+  max-width: 85%;
+  max-height: 85%;
+  border-radius: 10px;
+}
+
+.modal.show {
+  display: flex;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media (max-width: 900px) {
+  .site-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main"
+      "footer";
+  }
+
+  .site-sidebar {
+    border-right: none;
+    border-left: none;
+    border-bottom: 2px solid #c8bda4;
+  }
+
+  .site-nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .site-nav a {
+    min-width: 120px;
+  }
+
+  .header-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-left {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .site-main {
+    padding: 1rem;
+  }
+
+  .content-section {
+    padding: 1.25rem;
+  }
+
+  .theme-btn {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* =========================
+   VISITOR FORM
+========================= */
+.hidden-section {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.form-card {
+  background-color: white;
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.form-intro {
+  margin-bottom: 1rem;
+}
+
+.success-message {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background: #e6f6e8;
+  color: #24512d;
+  border: 1px solid #9ed3a7;
+  font-weight: bold;
+}
+
+.visitor-form {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-row,
+.submit-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.form-row {
+  justify-content: flex-start;
+}
+
+.form-row label,
+.group-label {
+  flex: 0 0 140px;
+  font-weight: bold;
+  color: #355e3b;
+  padding-top: 0.8rem;
+}
+
+.form-row-top label,
+.form-row-top .group-label {
+  padding-top: 0.2rem;
+}
+
+.field-wrap {
+  flex: 1 1 320px;
+  max-width: 700px;
+}
+
+.field-wrap input,
+.field-wrap textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #c8c8c8;
+  font: inherit;
+  background: #fff;
+}
+
+.field-wrap textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ===== LAYOUT ===== */
+
+.form-row.single .form-group {
+  flex: 1 1 100%;
+  max-width: 700px;
+}
+
+.form-row.double,
+.form-row.triple {
+  gap: 1rem;
+}
+
+.form-group {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.form-group label {
+  flex: none;
+  padding-top: 0;
+  margin-bottom: 0.35rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #c8c8c8;
+  font: inherit;
+  background: #fff;
+}
+
+.form-row.triple .form-group.state-group {
+  flex: 0 0 90px;
+}
+
+.form-row.triple .form-group.zip-group {
+  flex: 0 0 130px;
+}
+
+/* ===== CHECKBOX GROUP ===== */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex: none;
+  font-weight: normal;
+  color: #243224;
+  padding-top: 0;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: auto;
+  flex: 0 0 auto;
+}
+
+/* ===== ERROR MESSAGES ===== */
+.errorMsg {
+  min-height: 1.2rem;
+  margin-top: 0.35rem;
+  font-size: 0.92rem;
+  color: #b00020;
+}
+
+/* ===== VALIDATION STATES ===== */
+input.was-validated:invalid,
+textarea.was-validated:invalid {
+  border: 1px solid #b00020;
+  background-color: #fff5f5;
+}
+
+input.was-validated:valid,
+textarea.was-validated:valid {
+  border: 1px solid #2e7d32;
+  background-color: #f5fff6;
+}
+
+/* ===== SUBMIT BUTTON ===== */
+.submit-row {
+  justify-content: center;
+}
+
+.submit-btn {
+  padding: 0.8rem 1.5rem;
+  background-color: #6b8e5e;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 999px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #507047;
+  transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .form-row,
+  .submit-row,
+  .form-row.double,
+  .form-row.triple {
+    flex-direction: column;
+  }
+
+  .form-row label,
+  .group-label {
+    flex: 1 1 auto;
+    padding-top: 0;
+  }
+
+  .field-wrap {
+    max-width: 100%;
+  }
+
+  .form-row.triple .form-group.state-group,
+  .form-row.triple .form-group.zip-group {
+    flex: 1 1 auto;
+  }
+}

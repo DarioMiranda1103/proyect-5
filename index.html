@@ -1,0 +1,308 @@
+<!--
+Project: Project 5 Personal Web Site Visitor Form
+Name: Dario Miranda
+Submitted: April 22, 2026
+
+I declare that the following source code was written by me, or provided
+by the instructor for this project. I understand that copying source
+code from any other source, providing source code to another student,
+or leaving my code on a public web site constitutes cheating.
+I acknowledge that if I am found in violation of this policy this may result
+in a zero grade, a permanent record on file and possibly immediate failure of the class.
+
+Reflection:
+In this file I worked on restructuring the layout of the visitor form. One of the main 
+challenges was organizing the inputs in a cleaner way using rows, especially grouping 
+fields like first and last name, and city, state, and zip. At first, I had issues with 
+incorrect div structure, which caused elements to misalign. Fixing that helped me better 
+understand how important HTML structure is when working with Flexbox.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hiking Near Orem, Utah</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="site-layout">
+    <header class="site-header">
+      <div class="header-box">
+        <div class="header-left">
+          <img src="img/logo-hiking.png" alt="Hiking logo" class="logo">
+          <button id="themeToggle" class="theme-btn" type="button">Toggle Theme</button>
+        </div>
+
+        <div class="header-text">
+          <h1>Hiking Near Orem, Utah</h1>
+          <p>Favorite trails, views, waterfalls, and local outdoor spots.</p>
+        </div>
+      </div>
+    </header>
+
+    <aside class="site-sidebar">
+      <nav class="site-nav">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#media">Media</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#visit" id="logVisitLink">Log Visit</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="site-main">
+
+      <section id="home" class="content-section">
+        <h2>Home</h2>
+
+        <article class="intro-card">
+          <p>
+            This website is about hiking spots near Orem, Utah. I chose this topic because summer is approaching, and hiking is a great way to enjoy nature, explore the mountains, and experience different types of trails. The featured locations offer a variety of views and experiences, from steep climbs to waterfalls and suspension bridges.
+          </p>
+        </article>
+
+        <div class="card-grid">
+          <article class="info-card">
+            <h3>Y Trail</h3>
+            <p>
+              A popular trail near Provo with a steep climb and a great view of Utah Valley.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3>Battle Creek Falls</h3>
+            <p>
+              A scenic trail with a waterfall, canyon views, and a peaceful outdoor setting.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3>Bear Canyon Suspension Bridge</h3>
+            <p>
+              A trail known for its suspension bridge and wide views of the valley.
+            </p>
+          </article>
+        </div>
+
+        <article class="techniques-box">
+          <h3>CSS Techniques Used</h3>
+
+          <div class="tech-list">
+            <article class="tech-card">
+              <h4>CSS Grid</h4>
+              <p>
+                I used CSS Grid to organize the overall layout of the website, including the header, sidebar, main content, and footer.
+              </p>
+            </article>
+
+            <article class="tech-card">
+              <h4>Flexbox</h4>
+              <p>
+                I used Flexbox inside sections and content boxes to stack content vertically and control spacing.
+              </p>
+            </article>
+
+            <article class="tech-card">
+              <h4>Shadows and Rounded Corners</h4>
+              <p>
+                I added box shadows and rounded corners to make the site look cleaner and more modern.
+              </p>
+            </article>
+
+            <article class="tech-card">
+              <h4>Responsive Design</h4>
+              <p>
+                I added a media query so the layout adjusts on smaller screens and becomes easier to use on phones.
+              </p>
+            </article>
+          </div>
+        </article>
+
+        <details class="extra-note">
+          <summary>Why I picked this topic</summary>
+          <p>
+            I chose hiking because it is one of my favorite ways to spend my free time. Utah has many beautiful places to explore and capture amazing sunsets in a photo.
+          </p>
+        </details>
+      </section>
+
+      <section id="gallery" class="content-section">
+        <h2>Gallery</h2>
+
+        <figure class="featured-figure">
+          <img src="img/battle-creek.jpg" alt="Battle Creek Falls trail and waterfall">
+          <figcaption>Battle Creek Falls is one of the most scenic hiking spots near Orem.</figcaption>
+        </figure>
+
+        <div class="gallery-grid">
+          <article class="gallery-item">
+            <img src="img/y-trail.jpg" alt="Y Trail view">
+            <p>Y Trail</p>
+          </article>
+
+          <article class="gallery-item">
+            <img src="img/bear-canyon.jpg" alt="Bear Canyon Suspension Bridge">
+            <p>Bear Canyon Suspension Bridge</p>
+          </article>
+
+          <article class="gallery-item">
+            <img src="img/bonneville-shoreline.jpg" alt="Mountain hiking scenery">
+            <p>Mountain scenery near Orem</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="media" class="content-section">
+        <h2>Media</h2>
+
+        <article class="video-card">
+          <p>
+            This video shows the Y Trail hike, one of the most popular trails near Orem and Provo. It gives an idea of the climb and the views hikers can expect along the trail.
+          </p>
+
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/KLgDkdLBuE0"
+              title="Hiking the Y in Provo Utah"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </article>
+      </section>
+
+      <section id="contact" class="content-section">
+        <h2>Contact</h2>
+
+        <article class="contact-card">
+          <p><strong>Email:</strong> hikingexplorer@example.com</p>
+          <p><strong>Phone:</strong> (555) 987 6543</p>
+          <p><strong>Address:</strong> 123 Canyon View Road, Orem, Utah</p>
+        </article>
+      </section>
+
+      <section id="visit" class="content-section hidden-section">
+        <h2>Log Your Visit</h2>
+
+        <article class="form-card">
+          <p class="form-intro">
+            Fill out this form to log your visit to my hiking website.
+          </p>
+
+          <div id="success" class="success-message hidden">
+            Thank you for logging your visit!
+          </div>
+
+          <form id="myform" novalidate>
+            <ul class="visitor-form">
+
+              <li class="form-row double">
+                <div class="form-group">
+                  <label for="first-name">First Name</label>
+                  <input type="text" id="first-name" name="first-name" placeholder="First name">
+                  <div class="errorMsg"></div>
+                </div>
+              
+
+                <div class="form-group">
+                  <label for="last-name">Last Name</label>
+                  <input type="text" id="last-name" name="last-name" placeholder="Last name">
+                  <div class="errorMsg"></div>
+                </div>
+              </li>
+
+              <li class="form-row single">
+                <div class="form-group">
+                  <label for="address">Address</label>
+                  <input type="text" id="address" name="address" placeholder="Address">
+                  <div class="errorMsg"></div>
+                </div>
+              </li>
+
+              <li class="form-row triple">
+                <div class="form-group">
+                  <label for="city">City</label>
+                  <input type="text" id="city" name="city" placeholder="City">
+                  <div class="errorMsg"></div>
+                </div>
+              
+
+                <div class="form-group">
+                  <label for="state">State</label>
+                  <input type="text" id="state" name="state" maxlength="2" placeholder="State">
+                  <div class="errorMsg"></div>
+                </div>
+              
+
+                <div class="form-group">
+                  <label for="zip">Zip</label>
+                  <input type="text" id="zip" name="zip" placeholder="zip code">
+                  <div class="errorMsg"></div>
+                </div>
+              </li>
+
+              <li class="form-row double">
+                <div class="form-group">
+                  <label for="phone">Phone</label>
+                  <input type="text" id="phone" name="phone" placeholder="Phone number">
+                  <div class="errorMsg"></div>
+                </div>
+              
+
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="text" id="email" name="email" placeholder="Email">
+                  <div class="errorMsg"></div>
+                </div>
+              </li>
+
+              <li class="form-row form-row-top">
+                <span class="group-label">How did you find my page?</span>
+                <div class="field-wrap">
+                  <div class="checkbox-group">
+                    <label><input type="checkbox" id="google" name="find-page" value="google"> Google</label>
+                    <label><input type="checkbox" id="friend" name="find-page" value="friend"> Friend</label>
+                    <label><input type="checkbox" id="social" name="find-page" value="social"> Social Media</label>
+                    <label><input type="checkbox" id="other-source" name="find-page" value="other"> Other</label>
+                    <div class="errorMsg"></div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="form-row form-row-top">
+                <label for="comment">Comments</label>
+                <div class="field-wrap">
+                  <textarea id="comment" name="comment" rows="5" placeholder="Enter your comments here"></textarea>
+                  <div class="errorMsg"></div>
+                </div>
+              </li>
+
+              <li class="submit-row">
+                <button id="submitBtn" type="submit" class="submit-btn">Submit</button>
+              </li>
+
+            </ul>
+          </form>
+        </article>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>Favorite hiking spots near Orem, Utah. Built as part of my responsive website project.</p>
+    </footer>
+  </div>
+
+  <div id="image-modal" class="modal">
+    <img id="modal-img" class="modal-content" alt="Expanded gallery image">
+  </div>
+
+  <script src="js/validation.js"></script>
+  <script src="js/page.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
