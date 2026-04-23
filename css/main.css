@@ -603,4 +603,17 @@ textarea.was-validated:valid {
   .form-row.triple .form-group.zip-group {
     flex: 1 1 auto;
   }
+
+  .visitor-form {
+    gap: 0.8rem;
+  }
+
+  .form-row {
+    gap: 0.6rem;
+  }
+
+  .field-wrap textarea,
+  .form-group textarea {
+    min-height: 90px;
+  }
 }
