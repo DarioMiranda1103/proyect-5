@@ -603,4 +603,12 @@ textarea.was-validated:valid {
   .form-group textarea {
     min-height: 90px;
   }
+
+  .comments-row {
+  margin-bottom: 0.3rem;
+  }
+   
+  .submit-row {
+  margin-top: 0.3rem;
+  }
 }
